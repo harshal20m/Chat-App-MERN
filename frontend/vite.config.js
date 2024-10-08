@@ -8,7 +8,9 @@ export default defineConfig({
 		port: 3000,
 		proxy: {
 			"/api": {
-				target: "http://localhost:5000",
+				target: "https://chat-app-mern-okoz.onrender.com",
+				changeOrigin: true, // Fixes origin issues
+				secure: false, // Disables SSL certificate verification
 			},
 		},
 	},
