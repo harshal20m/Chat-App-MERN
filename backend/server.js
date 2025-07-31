@@ -10,6 +10,17 @@ import userRoutes from "./routes/user.routes.js";
 import connectToMongoDB from "./db/connectToMongoDB.js";
 import { app, server } from "./socket/socket.js";
 
+import cors from "cors";
+
+const allowedOrigins = ["https://chatsuuup.netlify.app"];
+
+app.use(
+	cors({
+		origin: allowedOrigins,
+		credentials: true, // if you use cookies or need Authorization headers
+	})
+);
+
 dotenv.config();
 
 const __dirname = path.resolve();
